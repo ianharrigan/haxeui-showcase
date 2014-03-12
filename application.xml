@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="HaxeUI Showcase" package="haxe.ui.showcase.haxeuishowcase" version="1.0.0" company="" />
+	
+	<!-- output -->
+	<app main="haxe.ui.showcase.Main" file="haxeuishowcase" path="bin" />
+	
+	<window background="#FFFFFF" fps="30" hardware="true" />
+	<window width="800" height="600" unless="mobile" />
+	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
+	
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+	<haxelib name="haxeui" />
+	
+	<!-- assets -->
+	<icon path="assets/application-default-icon.svg" />
+	<assets path="assets" rename="assets" />
+	
+	<assets path="assets/ui" rename="ui" exclude="*.xml|*.css" if="html5" />
+	<assets path="assets/ui" rename="ui" unless="html5" />
+	<assets path="assets/data" rename="data" exclude="*.json|*.txt|*.xml" if="html5" />
+	<assets path="assets/data" rename="data" unless="html5" />
+	<assets path="assets/resources" rename="resources" exclude="*.json|*.txt|*.xml" if="html5" />
+	<assets path="assets/resources" rename="resources" unless="html5" />
+	<assets path="assets/icons" rename="icons" />
+	<assets path="assets/images" rename="images" />
+	
+	<!-- optimize output
+	<haxeflag name="-dce full" /> -->
+	
+	<haxeflag name="-resource" value="assets/data/views.xml@data/views.xml" />
+	<haxeflag name="-resource" value="assets/ui/main.xml@ui/main.xml" />
+	<haxeflag name="-resource" value="assets/ui/todo.xml@ui/todo.xml" />
+
+	<haxeflag name="-resource" value="assets/resources/AbsoluteLayout/AbsoluteLayout.xml@resources/AbsoluteLayout/AbsoluteLayout.xml" />
+	<haxeflag name="-resource" value="assets/resources/AbsoluteLayout/AbsoluteLayout.hx@resources/AbsoluteLayout/AbsoluteLayout.hx" />
+	<haxeflag name="-resource" value="assets/resources/BoxLayout/BoxLayout.xml@resources/BoxLayout/BoxLayout.xml" />
+	<haxeflag name="-resource" value="assets/resources/BoxLayout/BoxLayout.hx@resources/BoxLayout/BoxLayout.hx" />
+	<haxeflag name="-resource" value="assets/resources/Buttons/Buttons.xml@resources/Buttons/Buttons.xml" />
+	<haxeflag name="-resource" value="assets/resources/Buttons/Buttons.hx@resources/Buttons/Buttons.hx" />
+	<haxeflag name="-resource" value="assets/resources/CheckBoxes/CheckBoxes.xml@resources/CheckBoxes/CheckBoxes.xml" />
+	<haxeflag name="-resource" value="assets/resources/CheckBoxes/CheckBoxes.hx@resources/CheckBoxes/CheckBoxes.hx" />
+	<haxeflag name="-resource" value="assets/resources/ContinuousLayout/ContinuousLayout.xml@resources/ContinuousLayout/ContinuousLayout.xml" />
+	<haxeflag name="-resource" value="assets/resources/ContinuousLayout/ContinuousLayout.hx@resources/ContinuousLayout/ContinuousLayout.hx" />
+	<haxeflag name="-resource" value="assets/resources/GridLayout/GridLayout.xml@resources/GridLayout/GridLayout.xml" />
+	<haxeflag name="-resource" value="assets/resources/GridLayout/GridLayout.hx@resources/GridLayout/GridLayout.hx" />
+	<haxeflag name="-resource" value="assets/resources/Images/Images.xml@resources/Images/Images.xml" />
+	<haxeflag name="-resource" value="assets/resources/Images/Images.hx@resources/Images/Images.hx" />
+	<haxeflag name="-resource" value="assets/resources/ListViews/ListViews.xml@resources/ListViews/ListViews.xml" />
+	<haxeflag name="-resource" value="assets/resources/ListViews/ListViews.hx@resources/ListViews/ListViews.hx" />
+	<haxeflag name="-resource" value="assets/resources/OptionBoxes/OptionBoxes.xml@resources/OptionBoxes/OptionBoxes.xml" />
+	<haxeflag name="-resource" value="assets/resources/OptionBoxes/OptionBoxes.hx@resources/OptionBoxes/OptionBoxes.hx" />
+	<haxeflag name="-resource" value="assets/resources/ScrollViews/ScrollViews.xml@resources/ScrollViews/ScrollViews.xml" />
+	<haxeflag name="-resource" value="assets/resources/ScrollViews/ScrollViews.hx@resources/ScrollViews/ScrollViews.hx" />
+	<haxeflag name="-resource" value="assets/resources/TextFields/TextFields.xml@resources/TextFields/TextFields.xml" />
+	<haxeflag name="-resource" value="assets/resources/TextFields/TextFields.hx@resources/TextFields/TextFields.hx" />
+	<haxeflag name="-resource" value="assets/resources/TextInputs/TextInputs.xml@resources/TextInputs/TextInputs.xml" />
+	<haxeflag name="-resource" value="assets/resources/TextInputs/TextInputs.hx@resources/TextInputs/TextInputs.hx" />
+	
+</project>

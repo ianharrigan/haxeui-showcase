@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project version="2">
+  <!-- Output SWF options -->
+  <output>
+    <movie outputType="Application" />
+    <movie input="" />
+    <movie path="application.xml" />
+    <movie fps="30" />
+    <movie width="800" />
+    <movie height="600" />
+    <movie version="3" />
+    <movie minorVersion="0" />
+    <movie platform="NME" />
+    <movie background="FFFFFF" />
+    <movie preferredSDK=";3;" />
+  </output>
+  <!-- Other classes to be compiled into your SWF -->
+  <classpaths>
+    <class path="src" />
+    <class path="X:\Haxe\haxe\lib\haxeui\1,2,1\styles" />
+    <class path="bin\flash\haxe" />
+  </classpaths>
+  <!-- Build options -->
+  <build>
+    <option directives="tools=1.2.5&#xA;display&#xA;web" />
+    <option flashStrict="False" />
+    <option noInlineOnDebug="False" />
+    <option mainClass="ApplicationMain" />
+    <option enabledebug="True" />
+    <option additional="--no-output&#xA;-resource assets/data/views.xml@data/views.xml&#xA;-resource assets/ui/main.xml@ui/main.xml&#xA;-resource assets/ui/todo.xml@ui/todo.xml&#xA;-resource assets/resources/AbsoluteLayout/AbsoluteLayout.xml@resources/AbsoluteLayout/AbsoluteLayout.xml&#xA;-resource assets/resources/AbsoluteLayout/AbsoluteLayout.hx@resources/AbsoluteLayout/AbsoluteLayout.hx&#xA;-resource assets/resources/BoxLayout/BoxLayout.xml@resources/BoxLayout/BoxLayout.xml&#xA;-resource assets/resources/BoxLayout/BoxLayout.hx@resources/BoxLayout/BoxLayout.hx&#xA;-resource assets/resources/Buttons/Buttons.xml@resources/Buttons/Buttons.xml&#xA;-resource assets/resources/Buttons/Buttons.hx@resources/Buttons/Buttons.hx&#xA;-resource assets/resources/CheckBoxes/CheckBoxes.xml@resources/CheckBoxes/CheckBoxes.xml&#xA;-resource assets/resources/CheckBoxes/CheckBoxes.hx@resources/CheckBoxes/CheckBoxes.hx&#xA;-resource assets/resources/ContinuousLayout/ContinuousLayout.xml@resources/ContinuousLayout/ContinuousLayout.xml&#xA;-resource assets/resources/ContinuousLayout/ContinuousLayout.hx@resources/ContinuousLayout/ContinuousLayout.hx&#xA;-resource assets/resources/GridLayout/GridLayout.xml@resources/GridLayout/GridLayout.xml&#xA;-resource assets/resources/GridLayout/GridLayout.hx@resources/GridLayout/GridLayout.hx&#xA;-resource assets/resources/Images/Images.xml@resources/Images/Images.xml&#xA;-resource assets/resources/Images/Images.hx@resources/Images/Images.hx&#xA;-resource assets/resources/ListViews/ListViews.xml@resources/ListViews/ListViews.xml&#xA;-resource assets/resources/ListViews/ListViews.hx@resources/ListViews/ListViews.hx&#xA;-resource assets/resources/OptionBoxes/OptionBoxes.xml@resources/OptionBoxes/OptionBoxes.xml&#xA;-resource assets/resources/OptionBoxes/OptionBoxes.hx@resources/OptionBoxes/OptionBoxes.hx&#xA;-resource assets/resources/ScrollViews/ScrollViews.xml@resources/ScrollViews/ScrollViews.xml&#xA;-resource assets/resources/ScrollViews/ScrollViews.hx@resources/ScrollViews/ScrollViews.hx&#xA;-resource assets/resources/TextFields/TextFields.xml@resources/TextFields/TextFields.xml&#xA;-resource assets/resources/TextFields/TextFields.hx@resources/TextFields/TextFields.hx&#xA;-resource assets/resources/TextInputs/TextInputs.xml@resources/TextInputs/TextInputs.xml&#xA;-resource assets/resources/TextInputs/TextInputs.hx@resources/TextInputs/TextInputs.hx&#xA;-swf-version 11.2&#xA;#--remap nme:flash" />
+  </build>
+  <!-- haxelib libraries -->
+  <haxelib>
+    <library name="openfl" />
+    <library name="actuate" />
+    <library name="haxeui" />
+  </haxelib>
+  <!-- Class files to compile (other referenced classes will automatically be included) -->
+  <compileTargets>
+    <compile path="src\haxe\ui\showcase\Main.hx" />
+  </compileTargets>
+  <!-- Assets to embed into the output SWF -->
+  <library>
+    <!-- example: <asset path="..." id="..." update="..." glyphs="..." mode="..." place="..." sharepoint="..." /> -->
+  </library>
+  <!-- Paths to exclude from the Project Explorer tree -->
+  <hiddenPaths>
+    <hidden path="obj" />
+  </hiddenPaths>
+  <!-- Executed before build -->
+  <preBuildCommand>copy_resources.bat</preBuildCommand>
+  <!-- Executed after build -->
+  <postBuildCommand alwaysRun="False" />
+  <!-- Other project options -->
+  <options>
+    <option showHiddenPaths="False" />
+    <option testMovie="Custom" />
+    <option testMovieCommand="" />
+  </options>
+  <!-- Plugin storage -->
+  <storage />
+</project>

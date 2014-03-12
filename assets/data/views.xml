@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<views>
+	<!--
+	**************************************************************************************
+	* GENERAL COMPONENTS
+	**************************************************************************************
+	-->
+	<view>
+		<group>General</group>
+		<name>Buttons</name>
+		<icon>icons/ui-buttons.png</icon>
+		<controller>haxe.ui.showcase.views.Buttons</controller>
+		<resources>
+			<resource type="haxe">resources/Buttons/Buttons.hx</resource>
+			<resource type="xml">resources/Buttons/Buttons.xml</resource>
+		</resources>
+	</view>
+
+	<view>
+		<group>General</group>
+		<name>Text Fields</name>
+		<icon>icons/ui-labels.png</icon>
+		<controller>haxe.ui.showcase.views.TextFields</controller>
+		<resources>
+		</resources>
+	</view>
+
+	<view>
+		<group>General</group>
+		<name>Text Inputs</name>
+		<icon>icons/ui-text-field.png</icon>
+		<controller>haxe.ui.showcase.views.TextInputs</controller>
+		<resources>
+			<resource type="haxe">resources/TextInputs/TextInputs.hx</resource>
+			<resource type="xml">resources/TextInputs/TextInputs.xml</resource>
+		</resources>
+	</view>
+	
+	<view>
+		<group>General</group>
+		<name>Check Boxes</name>
+		<icon>icons/ui-check-boxes.png</icon>
+		<controller>haxe.ui.showcase.views.CheckBoxes</controller>
+		<resources>
+		</resources>
+	</view>
+
+	<view>
+		<group>General</group>
+		<name>Option Boxes</name>
+		<icon>icons/ui-radio-buttons.png</icon>
+		<controller>haxe.ui.showcase.views.OptionBoxes</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<view>
+		<group>General</group>
+		<name>Images</name>
+		<icon>icons/images.png</icon>
+		<controller>haxe.ui.showcase.views.Images</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<view>
+		<group>General</group>
+		<name>Spacers</name>
+		<icon>icons/ui-spacer.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+
+	<view>
+		<group>General</group>
+		<name>Tab Bars</name>
+		<icon>icons/ui-tab.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+
+	<view>
+		<group>General</group>
+		<name>Menus</name>
+		<icon>icons/ui-menu-blue.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<!--
+	**************************************************************************************
+	* CONTAINERS
+	**************************************************************************************
+	-->
+	<view>
+		<group>Containers</group>
+		<name>Scroll view</name>
+		<icon>icons/ui-list-box-blue.png</icon>
+		<controller>haxe.ui.showcase.views.ScrollViews</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<view>
+		<group>Containers</group>
+		<name>List view</name>
+		<icon>icons/ui-list-box-blue.png</icon>
+		<controller>haxe.ui.showcase.views.ListViews</controller>
+		<resources>
+		</resources>
+	</view>
+
+	<view>
+		<group>Containers</group>
+		<name>Accordion</name>
+		<icon>icons/ui-accordion.png</icon>
+		<controller>haxe.ui.showcase.views.Accordions</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<!--
+	**************************************************************************************
+	* SELECTION
+	**************************************************************************************
+	-->
+	<view>
+		<group>Selection</group>
+		<name>List</name>
+		<icon>icons/ui-list-box-blue.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+
+	<view>
+		<group>Selection</group>
+		<name>Date</name>
+		<icon>icons/ui-combo-box-calendar.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<!--
+	**************************************************************************************
+	* SCROLLS
+	**************************************************************************************
+	-->
+	<view>
+		<group>Scrolls</group>
+		<name>Scrollbars</name>
+		<icon>icons/ui-scroll-bar-horizontal.png</icon>
+		<controller>haxe.ui.showcase.views.ScrollBars</controller>
+		<resources>
+			<resource type="haxe">resources/ScrollBars/ScrollBars.hx</resource>
+			<resource type="xml">resources/ScrollBars/ScrollBars.xml</resource>
+			<resource type="css">resources/main.css</resource>
+		</resources>
+	</view>
+
+	<view>
+		<group>Scrolls</group>
+		<name>Sliders</name>
+		<icon>icons/ui-slider-050.png</icon>
+		<controller>haxe.ui.showcase.views.Sliders</controller>
+		<resources>
+		</resources>
+	</view>
+
+	<view>
+		<group>Scrolls</group>
+		<name>Progress Bars</name>
+		<icon>icons/ui-progress-bar.png</icon>
+		<controller>haxe.ui.showcase.views.ProgressBars</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<!--
+	**************************************************************************************
+	* LAYOUTS
+	**************************************************************************************
+	-->
+	<view>
+		<group>Layouts</group>
+		<name>Absolute</name>
+		<icon>icons/ui-layered-pane.png</icon>
+		<controller>haxe.ui.showcase.views.AbsoluteLayout</controller>
+		<resources>
+			<resource type="haxe">resources/AbsoluteLayout/AbsoluteLayout.hx</resource>
+			<resource type="xml">resources/AbsoluteLayout/AbsoluteLayout.xml</resource>
+		</resources>
+	</view>
+
+	<view>
+		<group>Layouts</group>
+		<name>Box</name>
+		<icon>icons/ui-panel.png</icon>
+		<controller>haxe.ui.showcase.views.BoxLayout</controller>
+		<resources>
+			<resource type="haxe">resources/BoxLayout/BoxLayout.hx</resource>
+			<resource type="xml">resources/BoxLayout/BoxLayout.xml</resource>
+		</resources>
+	</view>
+	
+	<view>
+		<group>Layouts</group>
+		<name>Horizontal</name>
+		<icon>icons/ui-split-panel.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<view>
+		<group>Layouts</group>
+		<name>Vertical</name>
+		<icon>icons/ui-split-panel-vertical.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<view>
+		<group>Layouts</group>
+		<name>Grid</name>
+		<icon>icons/grid.png</icon>
+		<controller>haxe.ui.showcase.views.GridLayout</controller>
+		<resources>
+			<resource type="haxe">resources/GridLayout/GridLayout.hx</resource>
+			<resource type="xml">resources/GridLayout/GridLayout.xml</resource>
+		</resources>
+	</view>
+	
+	<view>
+		<group>Layouts</group>
+		<name>Continuous</name>
+		<icon>icons/ui-flow.png</icon>
+		<controller>haxe.ui.showcase.views.ContinuousLayout</controller>
+		<resources>
+		</resources>
+	</view>
+	<!--
+	**************************************************************************************
+	* POPUPS
+	**************************************************************************************
+	-->
+	<view>
+		<group>Popups</group>
+		<name>Simple</name>
+		<icon>icons/application-dialog.png</icon>
+		<controller>haxe.ui.showcase.views.SimplePopup</controller>
+		<resources>
+		</resources>
+	</view>
+
+	<view>
+		<group>Popups</group>
+		<name>Confirm</name>
+		<icon>icons/application-dialog.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<view>
+		<group>Popups</group>
+		<name>Custom</name>
+		<icon>icons/application-dialog.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+
+	<view>
+		<group>Popups</group>
+		<name>List</name>
+		<icon>icons/application-dialog.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<view>
+		<group>Popups</group>
+		<name>Calendar</name>
+		<icon>icons/application-dialog.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+	
+	<view>
+		<group>Popups</group>
+		<name>Busy</name>
+		<icon>icons/application-dialog.png</icon>
+		<controller>haxe.ui.showcase.views.Todo</controller>
+		<resources>
+		</resources>
+	</view>
+</views>
