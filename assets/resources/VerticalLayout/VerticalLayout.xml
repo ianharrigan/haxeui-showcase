@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<vbox>
+	<hbox>
+		<grid columns="3">
+			<text text="Child" />
+			<listSelector id="child" text="Button1" verticalAlign="top" selectedIndex="0" width="150" autoSize="false">
+				<array>Button1,Button2,Button3,Button4</array>
+			</listSelector>
+			<spacer />
+			
+			<text text="Child Width" />
+			<hslider id="childWidth" max="200" pos="50" width="150"/>
+			<checkbox id="childWidthAsPercent" text="%" verticalAlign="bottom" />
+			
+			<text text="Child Height" />
+			<hslider id="childHeight" max="200" pos="50" width="150"/>
+			<checkbox id="childHeightAsPercent" text="%" verticalAlign="bottom" />
+			
+			<text text="Child VAlign" />
+			<listSelector id="valign" text="top" selectedIndex="0" width="150" autoSize="false">
+				<array>top,center,bottom</array>
+			</listSelector>
+			<spacer />
+			
+			<text text="Child HAlign" />
+			<listSelector id="halign" text="left" selectedIndex="0" width="150" autoSize="false">
+				<array>left,center,right</array>
+			</listSelector>
+			<spacer />
+		</grid>
+		
+		<spacer width="20" />
+		
+		<vbox id="theBox" style="borderSize:1;padding:5;borderColor:0x000000" autoSize="true">
+			<button id="Button1" text="1" width="50" height="50" autoSize="false"/>
+			<button id="Button2" text="2" width="50" height="50" autoSize="false"/>
+			<button id="Button3" text="3" width="50" height="50" autoSize="false"/>
+			<button id="Button4" text="4" width="50" height="50" autoSize="false"/>
+		</vbox>
+	</hbox>
+</vbox>

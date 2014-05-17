@@ -1,41 +1,36 @@
 package haxe.ui.showcase.views;
 
-import haxe.ui.toolkit.controls.CheckBox;
-import haxe.ui.toolkit.controls.HSlider;
-import haxe.ui.toolkit.controls.TextInput;
 import haxe.ui.toolkit.core.XMLController;
-import haxe.ui.toolkit.events.UIEvent;
 
+@:build(haxe.ui.toolkit.core.Macros.buildController("assets/resources/TextInputs/TextInputs.xml"))
 class TextInputs extends XMLController {
 	public function new() {
-		super("resources/TextInputs/TextInputs.xml");
+		width.onChange = function(e) {
+			theInput.width = width.pos;
+		}
 		
-		getComponent("width").addEventListener(UIEvent.CHANGE, function(e:UIEvent) {
-			getComponent("theInput").width = cast(e.component, HSlider).pos;
-		});
-
-		getComponent("height").addEventListener(UIEvent.CHANGE, function(e:UIEvent) {
-			getComponent("theInput").height = cast(e.component, HSlider).pos;
-		});
-
-		getComponent("disabled").addEventListener(UIEvent.CLICK, function(e:UIEvent) {
-			getComponent("theInput").disabled = cast(e.component, CheckBox).selected;
-		});
+		height.onChange = function(e) {
+			theInput.height = height.pos;
+		}
 		
-		getComponent("password").addEventListener(UIEvent.CLICK, function(e:UIEvent) {
-			getComponentAs("theInput", TextInput).displayAsPassword = cast(e.component, CheckBox).selected;
-		});
+		disabled.onClick = function(e) {
+			theInput.disabled = disabled.selected;
+		}
 		
-		getComponent("placeholderText").addEventListener(UIEvent.CHANGE, function(e:UIEvent) {
-			getComponentAs("theInput", TextInput).placeholderText = e.component.text;
-		});
+		password.onClick = function(e) {
+			theInput.displayAsPassword = password.selected;
+		}
 		
-		getComponent("multiline").addEventListener(UIEvent.CLICK, function(e:UIEvent) {
-			getComponentAs("theInput", TextInput).multiline = cast(e.component, CheckBox).selected;
-		});
+		placeholderText.onChange = function(e) {
+			theInput.placeholderText = placeholderText.text;
+		}
 		
-		getComponent("wrapLines").addEventListener(UIEvent.CLICK, function(e:UIEvent) {
-			getComponentAs("theInput", TextInput).wrapLines = cast(e.component, CheckBox).selected;
-		});
+		multiline.onClick = function(e) {
+			theInput.multiline = multiline.selected;
+		}
+		
+		wrapLines.onClick = function(e) {
+			theInput.wrapLines = wrapLines.selected;
+		}
 	}
 }

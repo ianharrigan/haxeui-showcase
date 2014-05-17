@@ -3,9 +3,9 @@
 	<hbox>
 		<grid columns="2">
 			<text text="Child" />
-			<list id="child" text="Button1" verticalAlign="top" selectedIndex="0" width="150">
+			<listSelector id="child" text="Button1" verticalAlign="top" selectedIndex="0" width="150" autoSize="false">
 				<array>Button1,Button2,Button3,Button4</array>
-			</list>
+			</listSelector>
 			
 			<text text="Left" />
 			<hslider id="childLeft" max="200" pos="0" width="150"/>
@@ -21,10 +21,10 @@
 		</grid>
 		<spacer width="20" />
 		<box layout="absolute">
-			<button id="Button1" x="0" y="0" text="1" width="100" height="100" />
-			<button id="Button2" x="60" y="60" text="2" width="100" height="100" />
-			<button id="Button3" x="0" y="120" text="3" width="100" height="100" />
-			<button id="Button4" x="60" y="180" text="4" width="100" height="100" />
+			<button id="Button1" x="0" y="0" text="1" width="100" height="100" autoSize="false" />
+			<button id="Button2" x="60" y="60" text="2" width="100" height="100" autoSize="false" />
+			<button id="Button3" x="0" y="120" text="3" width="100" height="100" autoSize="false" />
+			<button id="Button4" x="60" y="180" text="4" width="100" height="100" autoSize="false" />
 		</box>
 	</hbox>
 </vbox>

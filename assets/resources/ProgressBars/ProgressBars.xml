@@ -3,9 +3,9 @@
 	<hbox>
 		<grid columns="2">
 			<text text="Direction" />
-			<list id="direction" text="Horizontal" width="150">
+			<listSelector id="direction" text="Horizontal" width="150" autoSize="false">
 				<array>Horizontal,Vertical</array>
-			</list>
+			</listSelector>
 			
 			<text text="Width" />
 			<hslider id="width" max="200" pos="100" width="150"/>

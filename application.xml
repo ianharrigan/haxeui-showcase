@@ -8,7 +8,7 @@
 	<!-- output -->
 	<app main="haxe.ui.showcase.Main" file="haxeuishowcase" path="bin" />
 	
-	<window background="#FFFFFF" fps="30" hardware="true" />
+	<window background="#FFFFFF" fps="60" hardware="true" />
 	<window width="800" height="600" unless="mobile" />
 	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
 	
@@ -30,6 +30,7 @@
 	<assets path="assets/resources" rename="resources" unless="html5" />
 	<assets path="assets/icons" rename="icons" />
 	<assets path="assets/images" rename="images" />
+	<assets path="assets/fonts" rename="fonts"/>
 	
 	<!-- optimize output
 	<haxeflag name="-dce full" /> -->

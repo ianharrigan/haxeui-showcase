@@ -1,96 +1,92 @@
 package haxe.ui.showcase.views;
 
-import haxe.ui.toolkit.controls.CheckBox;
-import haxe.ui.toolkit.controls.HSlider;
-import haxe.ui.toolkit.controls.selection.ListSelector;
+import haxe.ui.toolkit.core.Component;
 import haxe.ui.toolkit.core.XMLController;
-import haxe.ui.toolkit.events.UIEvent;
 
+@:build(haxe.ui.toolkit.core.Macros.buildController("assets/resources/BoxLayout/BoxLayout.xml"))
 class BoxLayout extends XMLController {
 	private static var VALIGNS:Array<String> = ["top", "center", "bottom"];
 	private static var HALIGNS:Array<String> = ["left", "center", "right"];
 	
 	public function new() {
-		super("resources/BoxLayout/BoxLayout.xml");
+		width.onChange = function(e) {
+			theBox.width = width.pos;
+		}
 		
-		getComponent("width").addEventListener(UIEvent.CHANGE, function(e:UIEvent) {
-			getComponent("theBox").width = cast(e.component, HSlider).pos;
-		});
+		height.onChange = function(e) {
+			theBox.height = height.pos;
+		}
+		
+		child.onChange = function(e) {
+			var c:Component = getComponent(child.text);
+			if (c.percentWidth == -1) {
+				childWidthAsPercent.selected = false;
+				childWidth.pos = c.width;
+			} else {
+				childWidthAsPercent.selected = true;
+				childWidth.pos = c.percentWidth;
+			}
+			
+			if (c.percentHeight == -1) {
+				childHeightAsPercent.selected = false;
+				childHeight.pos = c.height;
+			} else {
+				childHeightAsPercent.selected = true;
+				childHeight.pos = c.percentHeight;
+			}
+			
+			halign.selectedIndex = Lambda.indexOf(VALIGNS, c.horizontalAlign);
+			valign.selectedIndex = Lambda.indexOf(HALIGNS, c.verticalAlign);
+		}
+		
+		childWidth.onChange = function(e) {
+			var c:Component = getComponent(child.text);
+			if (childWidthAsPercent.selected == false) {
+				c.percentWidth = -1;
+				c.width = childWidth.pos;
+			} else {
+				c.percentWidth = childWidth.pos / 2;
+			}
+		}
 
-		getComponent("height").addEventListener(UIEvent.CHANGE, function(e:UIEvent) {
-			getComponent("theBox").height = cast(e.component, HSlider).pos;
-		});
-		
-		getComponent("child").addEventListener(UIEvent.CHANGE, function(e:UIEvent) {
-			var childId = e.component.text;
-			if (getComponent(childId).percentWidth == -1) {
-				getComponentAs("childWidthAsPercent", CheckBox).selected = false;
-				getComponentAs("childWidth", HSlider).pos = getComponent(childId).width;
+		childHeight.onChange = function(e) {
+			var c:Component = getComponent(child.text);
+			if (childHeightAsPercent.selected == false) {
+				c.percentHeight = -1;
+				c.height = childHeight.pos;
 			} else {
-				getComponentAs("childWidthAsPercent", CheckBox).selected = true;
-				getComponentAs("childWidth", HSlider).pos = getComponent(childId).percentWidth * 2;
+				c.percentHeight = childHeight.pos / 2;
 			}
-			
-			if (getComponent(childId).percentHeight == -1) {
-				getComponentAs("childHeightAsPercent", CheckBox).selected = false;
-				getComponentAs("childHeight", HSlider).pos = getComponent(childId).height;
+		}
+		
+		childWidthAsPercent.onClick = function(e) {
+			var c:Component = getComponent(child.text);
+			if (childWidthAsPercent.selected == false) {
+				c.percentWidth = -1;
+				c.width = childWidth.pos;
 			} else {
-				getComponentAs("childHeightAsPercent", CheckBox).selected = true;
-				getComponentAs("childHeight", HSlider).pos = getComponent(childId).percentHeight * 2;
+				c.percentWidth = childWidth.pos / 2;
 			}
-			
-			getComponentAs("valign", ListSelector).selectedIndex = Lambda.indexOf(VALIGNS, getComponent(childId).verticalAlign);
-			getComponentAs("halign", ListSelector).selectedIndex = Lambda.indexOf(HALIGNS, getComponent(childId).horizontalAlign);
-		});
+		}
 		
-		getComponent("childWidth").addEventListener(UIEvent.CHANGE, function(e:UIEvent) {
-			var childId = getComponent("child").text;
-			if (getComponentAs("childWidthAsPercent", CheckBox).selected == false) {
-				getComponent(childId).percentWidth = -1;
-				getComponent(childId).width = cast(e.component, HSlider).pos;
+		childHeightAsPercent.onClick = function(e) {
+			var c:Component = getComponent(child.text);
+			if (childHeightAsPercent.selected == false) {
+				c.percentHeight = -1;
+				c.height = childHeight.pos;
 			} else {
-				getComponent(childId).percentWidth = cast(e.component, HSlider).pos / 2;
+				c.percentHeight = childHeight.pos / 2;
 			}
-		});
+		}
 		
-		getComponent("childWidthAsPercent").addEventListener(UIEvent.CLICK, function(e:UIEvent) {
-			var childId = getComponent("child").text;
-			if (cast(e.component, CheckBox).selected == false) {
-				getComponent(childId).percentWidth = -1;
-				getComponent(childId).width = getComponentAs("childWidth", HSlider).pos;
-			} else {
-				getComponent(childId).percentWidth = getComponentAs("childWidth", HSlider).pos / 2;
-			}
-		});
-		
-		getComponent("childHeight").addEventListener(UIEvent.CHANGE, function(e:UIEvent) {
-			var childId = getComponent("child").text;
-			if (getComponentAs("childHeightAsPercent", CheckBox).selected == false) {
-				getComponent(childId).percentHeight = -1;
-				getComponent(childId).height = cast(e.component, HSlider).pos;
-			} else {
-				getComponent(childId).percentHeight = cast(e.component, HSlider).pos / 2;
-			}
-		});
-		
-		getComponent("childHeightAsPercent").addEventListener(UIEvent.CLICK, function(e:UIEvent) {
-			var childId = getComponent("child").text;
-			if (cast(e.component, CheckBox).selected == false) {
-				getComponent(childId).percentHeight = -1;
-				getComponent(childId).height = getComponentAs("childHeight", HSlider).pos;
-			} else {
-				getComponent(childId).percentHeight = getComponentAs("childHeight", HSlider).pos / 2;
-			}
-		});
-		
-		getComponent("valign").addEventListener(UIEvent.CHANGE, function(e:UIEvent) {
-			var childId = getComponent("child").text;
-			getComponent(childId).verticalAlign = e.component.text;
-		});
-		
-		getComponent("halign").addEventListener(UIEvent.CHANGE, function(e:UIEvent) {
-			var childId = getComponent("child").text;
-			getComponent(childId).horizontalAlign = e.component.text;
-		});
+		halign.onChange = function(e) {
+			var c:Component = getComponent(child.text);
+			c.horizontalAlign = halign.text;
+		}
+
+		valign.onChange = function(e) {
+			var c:Component = getComponent(child.text);
+			c.verticalAlign = valign.text;
+		}
 	}
 }

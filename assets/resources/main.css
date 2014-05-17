@@ -6,7 +6,3 @@ Text.valueLabel {
 	width: 30;
 	autoSize: false;
 }
-
-#views .page VBox {
-	spacing: 5;
-}

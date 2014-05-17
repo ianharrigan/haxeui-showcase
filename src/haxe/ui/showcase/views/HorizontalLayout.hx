@@ -3,20 +3,12 @@ package haxe.ui.showcase.views;
 import haxe.ui.toolkit.core.Component;
 import haxe.ui.toolkit.core.XMLController;
 
-@:build(haxe.ui.toolkit.core.Macros.buildController("assets/resources/BoxLayout/BoxLayout.xml"))
-class BoxLayout extends XMLController {
+@:build(haxe.ui.toolkit.core.Macros.buildController("assets/resources/HorizontalLayout/HorizontalLayout.xml"))
+class HorizontalLayout extends XMLController {
 	private static var VALIGNS:Array<String> = ["top", "center", "bottom"];
 	private static var HALIGNS:Array<String> = ["left", "center", "right"];
 	
 	public function new() {
-		width.onChange = function(e) {
-			theBox.width = width.pos;
-		}
-		
-		height.onChange = function(e) {
-			theBox.height = height.pos;
-		}
-		
 		child.onChange = function(e) {
 			var c:Component = getComponent(child.text);
 			if (c.percentWidth == -1) {

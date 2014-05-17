@@ -22,6 +22,8 @@
 		<icon>icons/ui-labels.png</icon>
 		<controller>haxe.ui.showcase.views.TextFields</controller>
 		<resources>
+			<resource type="haxe">resources/TextFields/TextFields.hx</resource>
+			<resource type="xml">resources/TextFields/TextFields.xml</resource>
 		</resources>
 	</view>
 
@@ -42,6 +44,8 @@
 		<icon>icons/ui-check-boxes.png</icon>
 		<controller>haxe.ui.showcase.views.CheckBoxes</controller>
 		<resources>
+			<resource type="haxe">resources/CheckBoxes/CheckBoxes.hx</resource>
+			<resource type="xml">resources/CheckBoxes/CheckBoxes.xml</resource>
 		</resources>
 	</view>
 
@@ -51,6 +55,8 @@
 		<icon>icons/ui-radio-buttons.png</icon>
 		<controller>haxe.ui.showcase.views.OptionBoxes</controller>
 		<resources>
+			<resource type="haxe">resources/OptionBoxes/OptionBoxes.hx</resource>
+			<resource type="xml">resources/OptionBoxes/OptionBoxes.xml</resource>
 		</resources>
 	</view>
 	
@@ -60,6 +66,8 @@
 		<icon>icons/images.png</icon>
 		<controller>haxe.ui.showcase.views.Images</controller>
 		<resources>
+			<resource type="haxe">resources/Images/Images.hx</resource>
+			<resource type="xml">resources/Images/Images.xml</resource>
 		</resources>
 	</view>
 	
@@ -101,6 +109,8 @@
 		<icon>icons/ui-list-box-blue.png</icon>
 		<controller>haxe.ui.showcase.views.ScrollViews</controller>
 		<resources>
+			<resource type="haxe">resources/ScrollViews/ScrollViews.hx</resource>
+			<resource type="xml">resources/ScrollViews/ScrollViews.xml</resource>
 		</resources>
 	</view>
 	
@@ -110,6 +120,8 @@
 		<icon>icons/ui-list-box-blue.png</icon>
 		<controller>haxe.ui.showcase.views.ListViews</controller>
 		<resources>
+			<resource type="haxe">resources/ListViews/ListViews.hx</resource>
+			<resource type="xml">resources/ListViews/ListViews.xml</resource>
 		</resources>
 	</view>
 
@@ -119,6 +131,8 @@
 		<icon>icons/ui-accordion.png</icon>
 		<controller>haxe.ui.showcase.views.Accordions</controller>
 		<resources>
+			<resource type="haxe">resources/Accordions/Accordions.hx</resource>
+			<resource type="xml">resources/Accordions/Accordions.xml</resource>
 		</resources>
 	</view>
 	
@@ -131,8 +145,10 @@
 		<group>Selection</group>
 		<name>List</name>
 		<icon>icons/ui-list-box-blue.png</icon>
-		<controller>haxe.ui.showcase.views.Todo</controller>
+		<controller>haxe.ui.showcase.views.ListSelectors</controller>
 		<resources>
+			<resource type="haxe">resources/ListSelectors/ListSelectors.hx</resource>
+			<resource type="xml">resources/ListSelectors/ListSelectors.xml</resource>
 		</resources>
 	</view>
 
@@ -140,8 +156,10 @@
 		<group>Selection</group>
 		<name>Date</name>
 		<icon>icons/ui-combo-box-calendar.png</icon>
-		<controller>haxe.ui.showcase.views.Todo</controller>
+		<controller>haxe.ui.showcase.views.DateSelectors</controller>
 		<resources>
+			<resource type="haxe">resources/DateSelectors/DateSelectors.hx</resource>
+			<resource type="xml">resources/DateSelectors/DateSelectors.xml</resource>
 		</resources>
 	</view>
 	
@@ -168,6 +186,8 @@
 		<icon>icons/ui-slider-050.png</icon>
 		<controller>haxe.ui.showcase.views.Sliders</controller>
 		<resources>
+			<resource type="haxe">resources/Sliders/Sliders.hx</resource>
+			<resource type="xml">resources/Sliders/Sliders.xml</resource>
 		</resources>
 	</view>
 
@@ -177,6 +197,8 @@
 		<icon>icons/ui-progress-bar.png</icon>
 		<controller>haxe.ui.showcase.views.ProgressBars</controller>
 		<resources>
+			<resource type="haxe">resources/ProgressBars/ProgressBars.hx</resource>
+			<resource type="xml">resources/ProgressBars/ProgressBars.xml</resource>
 		</resources>
 	</view>
 	
@@ -211,8 +233,10 @@
 		<group>Layouts</group>
 		<name>Horizontal</name>
 		<icon>icons/ui-split-panel.png</icon>
-		<controller>haxe.ui.showcase.views.Todo</controller>
+		<controller>haxe.ui.showcase.views.HorizontalLayout</controller>
 		<resources>
+			<resource type="haxe">resources/HorizontalLayout/HorizontalLayout.hx</resource>
+			<resource type="xml">resources/HorizontalLayout/HorizontalLayout.xml</resource>
 		</resources>
 	</view>
 	
@@ -220,8 +244,10 @@
 		<group>Layouts</group>
 		<name>Vertical</name>
 		<icon>icons/ui-split-panel-vertical.png</icon>
-		<controller>haxe.ui.showcase.views.Todo</controller>
+		<controller>haxe.ui.showcase.views.VerticalLayout</controller>
 		<resources>
+			<resource type="haxe">resources/VerticalLayout/VerticalLayout.hx</resource>
+			<resource type="xml">resources/VerticalLayout/VerticalLayout.xml</resource>
 		</resources>
 	</view>
 	
@@ -242,6 +268,8 @@
 		<icon>icons/ui-flow.png</icon>
 		<controller>haxe.ui.showcase.views.ContinuousLayout</controller>
 		<resources>
+			<resource type="haxe">resources/ContinuousLayout/ContinuousLayout.hx</resource>
+			<resource type="xml">resources/ContinuousLayout/ContinuousLayout.xml</resource>
 		</resources>
 	</view>
 	<!--
@@ -255,6 +283,8 @@
 		<icon>icons/application-dialog.png</icon>
 		<controller>haxe.ui.showcase.views.SimplePopup</controller>
 		<resources>
+			<resource type="haxe">resources/SimplePopup/SimplePopup.hx</resource>
+			<resource type="xml">resources/SimplePopup/SimplePopup.xml</resource>
 		</resources>
 	</view>
 

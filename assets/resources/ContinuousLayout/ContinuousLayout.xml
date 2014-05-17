@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ui:vbox>
-	<ui:hbox>
-		<ui:grid columns="3">
-			<ui:text text="Width" />
-			<ui:hslider id="width" max="310" pos="200" width="150"/>
-			<ui:spacer />
+<vbox>
+	<hbox>
+		<grid columns="3">
+			<text text="Width" />
+			<hslider id="width" max="310" pos="200" width="150"/>
+			<spacer />
 			
-			<ui:text text="Height" />
-			<ui:hslider id="height" max="450" pos="200" width="150"/>
-			<ui:spacer />
+			<text text="Height" />
+			<hslider id="height" max="450" pos="200" width="150"/>
+			<spacer />
 			
-			<ui:spacer height="20" />
-			<ui:spacer />
-			<ui:spacer />
+			<spacer height="20" />
+			<spacer />
+			<spacer />
 			
-			<ui:text text="Child" />
-			<list id="child" text="Button1" verticalAlign="top" selectedIndex="0" width="150">
+			<text text="Child" />
+			<listSelector id="child" text="Button1" verticalAlign="top" selectedIndex="0" width="150" autoSize="false">
 				<array>Button1,Button2,Button3,Button4,Button5,Button6,Button7,Button8,Button9</array>
-			</list>
-			<ui:spacer />
+			</listSelector>
+			<spacer />
 			
-			<ui:text text="Child Width" />
-			<ui:hslider id="childWidth" max="200" pos="50" width="150"/>
-			<ui:checkbox id="childWidthAsPercent" text="%" verticalAlign="bottom" />
+			<text text="Child Width" />
+			<hslider id="childWidth" max="200" pos="50" width="150"/>
+			<checkbox id="childWidthAsPercent" text="%" verticalAlign="bottom" />
 			
-			<ui:text text="Child Height" />
-			<ui:hslider id="childHeight" max="200" pos="50" width="150"/>
-			<ui:checkbox id="childHeightAsPercent" text="%" verticalAlign="bottom" />
+			<text text="Child Height" />
+			<hslider id="childHeight" max="200" pos="50" width="150"/>
+			<checkbox id="childHeightAsPercent" text="%" verticalAlign="bottom" />
 			
-			<ui:text text="Child VAlign" />
-			<list id="valign" text="top" selectedIndex="0" width="150">
+			<text text="Child VAlign" />
+			<listSelector id="valign" text="top" selectedIndex="0" width="150" autoSize="false">
 				<array>top,center,bottom</array>
-			</list>
-			<ui:spacer />
+			</listSelector>
+			<spacer />
 			
-			<ui:text text="Child HAlign" />
-			<list id="halign" text="left" selectedIndex="0" width="150">
+			<text text="Child HAlign" />
+			<listSelector id="halign" text="left" selectedIndex="0" width="150" autoSize="false">
 				<array>left,center,right</array>
-			</list>
-			<ui:spacer />
-		</ui:grid>
-		<ui:spacer width="20" />
-		<ui:continuousbox id="theBox" style="borderSize:1;padding:5;spacing:5;" width="200" height="200" autoSize="false">
-			<ui:button id="Button1" text="1" width="30" height="30" />
-			<ui:button id="Button2" text="2" width="30" height="30" />
-			<ui:button id="Button3" text="3" width="30" height="30" />
-			<ui:button id="Button4" text="4" width="30" height="30" />
-			<ui:button id="Button5" text="5" width="30" height="30" />
-			<ui:button id="Button6" text="6" width="30" height="30" />
-			<ui:button id="Button7" text="7" width="30" height="30" />
-			<ui:button id="Button8" text="8" width="30" height="30" />
-			<ui:button id="Button9" text="9" width="30" height="30" />
-		</ui:continuousbox>
-	</ui:hbox>
-</ui:vbox>
+			</listSelector>
+			<spacer />
+		</grid>
+		<spacer width="20" />
+		<continuousbox id="theBox" style="borderSize:1;padding:5;spacing:5;borderColor:0x000000" width="200" height="200" autoSize="false">
+			<button id="Button1" text="1" width="40" height="40" autoSize="false" />
+			<button id="Button2" text="2" width="40" height="40" autoSize="false" />
+			<button id="Button3" text="3" width="40" height="40" autoSize="false" />
+			<button id="Button4" text="4" width="40" height="40" autoSize="false" />
+			<button id="Button5" text="5" width="40" height="40" autoSize="false" />
+			<button id="Button6" text="6" width="40" height="40" autoSize="false" />
+			<button id="Button7" text="7" width="40" height="40" autoSize="false" />
+			<button id="Button8" text="8" width="40" height="40" autoSize="false" />
+			<button id="Button9" text="9" width="40" height="40" autoSize="false" />
+		</continuousbox>
+	</hbox>
+</vbox>

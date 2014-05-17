@@ -1,6 +1,7 @@
 package haxe.ui.showcase;
 
 import flash.events.Event;
+import haxe.ui.showcase.util.Prefs;
 import haxe.ui.showcase.util.XPathUtil;
 import haxe.ui.showcase.views.AbsoluteLayout;
 import haxe.ui.showcase.views.Accordions;
@@ -8,8 +9,11 @@ import haxe.ui.showcase.views.BoxLayout;
 import haxe.ui.showcase.views.Buttons;
 import haxe.ui.showcase.views.CheckBoxes;
 import haxe.ui.showcase.views.ContinuousLayout;
+import haxe.ui.showcase.views.DateSelectors;
 import haxe.ui.showcase.views.GridLayout;
+import haxe.ui.showcase.views.HorizontalLayout;
 import haxe.ui.showcase.views.Images;
+import haxe.ui.showcase.views.ListSelectors;
 import haxe.ui.showcase.views.ListViews;
 import haxe.ui.showcase.views.OptionBoxes;
 import haxe.ui.showcase.views.ProgressBars;
@@ -20,6 +24,7 @@ import haxe.ui.showcase.views.Sliders;
 import haxe.ui.showcase.views.TextFields;
 import haxe.ui.showcase.views.TextInputs;
 import haxe.ui.showcase.views.Todo;
+import haxe.ui.showcase.views.VerticalLayout;
 import haxe.ui.toolkit.containers.Accordion;
 import haxe.ui.toolkit.containers.ContinuousBox;
 import haxe.ui.toolkit.containers.Grid;
@@ -31,20 +36,57 @@ import haxe.ui.toolkit.controls.extended.Code;
 import haxe.ui.toolkit.controls.Menu;
 import haxe.ui.toolkit.controls.MenuButton;
 import haxe.ui.toolkit.controls.MenuItem;
+import haxe.ui.toolkit.controls.selection.ListSelector;
 import haxe.ui.toolkit.core.Component;
 import haxe.ui.toolkit.core.Controller;
+import haxe.ui.toolkit.core.PopupManager.PopupButton;
+import haxe.ui.toolkit.core.renderers.ItemRenderer;
 import haxe.ui.toolkit.core.XMLController;
+import haxe.ui.toolkit.events.MenuEvent;
 import haxe.ui.toolkit.events.UIEvent;
 import haxe.ui.toolkit.resources.ResourceManager;
 import xpath.xml.XPathXml;
 
 class MainController extends XMLController {
-	private var _loadResources:Bool = true;
+	private var _loadResources:Bool = false;
 	private var _groups:Map<String, ListView>;
 
+	private var theme:ListSelector;
+	
 	public function new() {
 		super("ui/main.xml");
 
+		_loadResources = Prefs.showSources == "yes";
+		
+		theme = getComponentAs("theme", ListSelector);
+		var themeName:String = "Default";
+		if (Prefs.theme == "default") {
+			themeName = "Default Theme";
+		} else if (Prefs.theme == "gradient") {
+			themeName = "Gradient Theme";
+		}
+		theme.text = themeName;
+		theme.onChange = function(e) {
+			Prefs.theme = theme.selectedItems[0].data.id;
+			showSimplePopup("The theme has been changed. You must restart (or refresh) the application to use the new theme.");
+		};
+		
+		attachEvent("menuApplication", MenuEvent.SELECT, function(e:MenuEvent) {
+			switch (e.menuItem.id) {
+				case "menuSettings":
+					popupSettings();
+				case "menuAbout":
+					popupAbout();
+				default:
+			}
+		});
+		
+		attachEvent("menuView", MenuEvent.SELECT, function(e:MenuEvent) {
+			var controller = e.menuItem.userData;
+			var name = e.menuItem.id;
+			showView(controller);
+		});
+		
 		_groups = new Map<String, ListView>();
 		buildMenu();
 		loadViews();
@@ -67,6 +109,7 @@ class MainController extends XMLController {
 		for (item in a) {
 			var group:String = XPathUtil.getXPathValue(item, "group/text()");
 			var name:String = XPathUtil.getXPathValue(item, "name/text()");
+			var controller:String = XPathUtil.getXPathValue(item, "controller/text()");
 			
 			var groupMenu:Menu = groupMenus.get(group);
 			if (groupMenu == null) {
@@ -78,18 +121,10 @@ class MainController extends XMLController {
 			
 			var item:MenuItem = new MenuItem();
 			item.text = name;
+			item.userData = controller;
+			item.id = name;
 			groupMenu.addChild(item);
 		}
-		
-		/*
-		var item:Menu = new Menu();
-		item.text = "Buttons 1";
-		menu.addChild(item);
-
-		var item:Menu = new Menu();
-		item.text = "Buttons 2";
-		menu.addChild(item);
-		*/
 	}
 	
 	private function loadViews():Void {
@@ -115,7 +150,9 @@ class MainController extends XMLController {
 				vbox.text = group;
 				
 				list = new ListView();
-				list.showVScroll = false;
+				if (Prefs.theme == "gradient") {
+					list.showVScroll = false;
+				}
 				list.percentWidth = list.percentHeight = 100;
 				list.addEventListener(UIEvent.CHANGE, _onViewItemChange);
 				vbox.addChild(list);
@@ -154,9 +191,10 @@ class MainController extends XMLController {
 			var controller:String = XPathUtil.getXPathValue(item, "controller/text()");
 			
 			var button:Button = new Button();
+			button.autoSize = false;
 			button.width = 110;// 100 / cols;
 			button.height = 110;
-			//button.style.icon = icon;
+			button.icon = icon;
 			button.style.iconPosition = "top";
 			button.text = name;
 			button.userData = controller;
@@ -169,9 +207,9 @@ class MainController extends XMLController {
 	}
 	
 	private function _onViewItemChange(event:UIEvent):Void {
-		var list:ListView = cast event.component;
-		var data:Dynamic = list.selectedItems[0].data;
-		showView(data.controller);
+		//var list:ListView = cast event.component;
+		//var data:Dynamic = list.selectedItems[0].data;
+		showView(cast(event.component, ItemRenderer).data.controller);
 	}
 	
 	private function _onViewButtonClick(event:UIEvent):Void {
@@ -241,8 +279,29 @@ class MainController extends XMLController {
 				}
 			}
 		}
-		
+
 		//tabs.selectedIndex = -1;
 		tabs.selectedIndex = 0;
+		
+		//var views:Accordion = getComponentAs("views", Accordion);
+		//views.selectedIndex = 2;
+	}
+
+	private function popupSettings():Void {
+		var controller:PrefsController = new PrefsController();
+		var config:Dynamic = { };
+		config.buttons = [PopupButton.CONFIRM, PopupButton.CANCEL];
+		config.styleName = "prefs-popup";
+		config.width = 400;
+		showCustomPopup(controller.view, "Settings", config, function(e) {
+			if (e == PopupButton.CONFIRM) {
+				controller.savePrefs();
+				showSimplePopup("Your settings have been changed. You must restart (or refresh) the application from the new settings to take effect.");
+			}
+		});
+	}
+	
+	private function popupAbout():Void {
+		showCustomPopup("ui/about.xml", "About", {width: 400, buttons: PopupButton.OK});
 	}
 }
