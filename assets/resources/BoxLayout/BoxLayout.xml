@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <vbox>
 	<hbox>
-		<grid columns="3">
+		<grid columns="4">
 			<text text="Width" />
-			<hslider id="width" max="310" pos="200" width="150"/>
+			<hslider id="width" max="280" pos="200" width="150"/>
+			<text id="widthLabel" text="???" width="35" autoSize="false" />
 			<spacer />
 			
 			<text text="Height" />
 			<hslider id="height" max="450" pos="200" width="150"/>
+			<text id="heightLabel" text="???" width="35" autoSize="false" />
 			<spacer />
 
+			<spacer />
+			<checkbox id="disabled" text="Disabled" />
+			<spacer />
+			<spacer />
+			
 			<spacer height="20" />
+			<spacer />
 			<spacer />
 			<spacer />
 			
@@ -19,25 +27,30 @@
 				<array>Button1,Button2,Button3,Button4,Button5,Button6,Button7,Button8,Button9</array>
 			</listSelector>
 			<spacer />
+			<spacer />
 			
-			<text text="Child Width" />
+			<text text="Width" />
 			<hslider id="childWidth" max="200" pos="50" width="150"/>
+			<text id="childWidthLabel" text="???" width="35" autoSize="false" />
 			<checkbox id="childWidthAsPercent" text="%" verticalAlign="bottom" />
 			
-			<text text="Child Height" />
+			<text text="Height" />
 			<hslider id="childHeight" max="200" pos="50" width="150"/>
+			<text id="childHeightLabel" text="???" width="35" autoSize="false" />
 			<checkbox id="childHeightAsPercent" text="%" verticalAlign="bottom" />
 			
-			<text text="Child VAlign" />
+			<text text="VAlign" />
 			<listSelector id="valign" text="top" selectedIndex="0" width="150" autoSize="false">
 				<array>top,center,bottom</array>
 			</listSelector>
 			<spacer />
+			<spacer />
 			
-			<text text="Child HAlign" />
+			<text text="HAlign" />
 			<listSelector id="halign" text="left" selectedIndex="0" width="150" autoSize="false">
 				<array>left,center,right</array>
 			</listSelector>
+			<spacer />
 			<spacer />
 		</grid>
 		

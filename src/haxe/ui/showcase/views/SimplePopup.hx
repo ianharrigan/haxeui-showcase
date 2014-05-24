@@ -26,5 +26,4 @@ class SimplePopup extends XMLController {
 			PopupManager.instance.showSimple(text.text, title.text, buttons);
 		};
 	}
-	
 }

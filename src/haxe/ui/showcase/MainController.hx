@@ -6,27 +6,35 @@ import haxe.ui.showcase.util.XPathUtil;
 import haxe.ui.showcase.views.AbsoluteLayout;
 import haxe.ui.showcase.views.Accordions;
 import haxe.ui.showcase.views.BoxLayout;
+import haxe.ui.showcase.views.BusyPopup;
 import haxe.ui.showcase.views.Buttons;
 import haxe.ui.showcase.views.CheckBoxes;
-import haxe.ui.showcase.views.ContinuousLayout;
+import haxe.ui.showcase.views.CustomPopup;
+import haxe.ui.showcase.views.CalendarPopup;
+import haxe.ui.showcase.views.HContinuousLayout;
 import haxe.ui.showcase.views.DateSelectors;
 import haxe.ui.showcase.views.GridLayout;
 import haxe.ui.showcase.views.HorizontalLayout;
 import haxe.ui.showcase.views.Images;
+import haxe.ui.showcase.views.ListPopup;
 import haxe.ui.showcase.views.ListSelectors;
 import haxe.ui.showcase.views.ListViews;
 import haxe.ui.showcase.views.OptionBoxes;
-import haxe.ui.showcase.views.ProgressBars;
-import haxe.ui.showcase.views.ScrollBars;
+import haxe.ui.showcase.views.HProgressBars;
+import haxe.ui.showcase.views.HScrollBars;
 import haxe.ui.showcase.views.ScrollViews;
 import haxe.ui.showcase.views.SimplePopup;
-import haxe.ui.showcase.views.Sliders;
+import haxe.ui.showcase.views.HSliders;
 import haxe.ui.showcase.views.TextFields;
 import haxe.ui.showcase.views.TextInputs;
 import haxe.ui.showcase.views.Todo;
+import haxe.ui.showcase.views.VContinuousLayout;
 import haxe.ui.showcase.views.VerticalLayout;
+import haxe.ui.showcase.views.VProgressBars;
+import haxe.ui.showcase.views.VScrollBars;
+import haxe.ui.showcase.views.VSliders;
 import haxe.ui.toolkit.containers.Accordion;
-import haxe.ui.toolkit.containers.ContinuousBox;
+import haxe.ui.toolkit.containers.ContinuousHBox;
 import haxe.ui.toolkit.containers.Grid;
 import haxe.ui.toolkit.containers.ListView;
 import haxe.ui.toolkit.containers.TabView;
@@ -177,11 +185,11 @@ class MainController extends XMLController {
 		if (views.selectedButton == null) {
 			return;
 		}
-		
+
 		var xml:Xml = ResourceManager.instance.getXML("data/views.xml");
 		var xpath:String = "/views/view/group[text() = '" + views.selectedButton.text + "']";
 		var a:Array<Xml> = XPathUtil.getXPathNodes(xml, xpath);
-		var box:ContinuousBox = new ContinuousBox();
+		var box:ContinuousHBox = new ContinuousHBox();
 		box.percentWidth = 100;
 		box.text = views.selectedButton.text;
 		for (item in a) {
@@ -192,6 +200,7 @@ class MainController extends XMLController {
 			
 			var button:Button = new Button();
 			button.autoSize = false;
+			button.multiline = true;
 			button.width = 110;// 100 / cols;
 			button.height = 110;
 			button.icon = icon;
@@ -226,6 +235,7 @@ class MainController extends XMLController {
 		var name:String = XPathUtil.getXPathValue(node, "name/text()");
 		var controller:String = XPathUtil.getXPathValue(node, "controller/text()");
 		var view:Controller = Type.createInstance(Type.resolveClass(controller), []);
+		var icon:String = XPathUtil.getXPathValue(node, "icon/text()");
 		/*
 		var container:VBox = new VBox();
 		container.percentWidth = container.percentHeight = 100;
@@ -234,9 +244,11 @@ class MainController extends XMLController {
 		*/
 		cast(view.view, Component).text = name;
 		tabs.addChild(view.view);
+		tabs.getTabButton(0).icon = icon;
 		
 		if (_loadResources == true) {
 			var resources:Array<Xml> = XPathUtil.getXPathNodes(node, "resources/resource");
+			var tabIndex:Int = 0;
 			for (r in resources) {
 				var resType:String = XPathUtil.getXPathValue(r, "@type");
 				var res:String = XPathUtil.getXPathValue(r, "text()");
@@ -244,6 +256,7 @@ class MainController extends XMLController {
 				var resName:String = res.substr(n + 1, res.length);
 				
 				var c:Component = null;
+				var icon = null;
 				if (resType == "haxe") {
 					c = new Code();
 					cast(c, Code).async = true;
@@ -252,6 +265,7 @@ class MainController extends XMLController {
 					code = StringTools.replace(code, "\r", "");
 					c.text = code;
 					c.percentWidth = c.percentHeight = 100;
+					icon = "icons/blue-document-haxe.png";
 				} else if (resType == "xml") {
 					c = new Code();
 					cast(c, Code).async = true;
@@ -260,6 +274,7 @@ class MainController extends XMLController {
 					code = StringTools.replace(code, "\r", "");
 					c.text = code;
 					c.percentWidth = c.percentHeight = 100;
+					icon = "icons/blue-document-xml.png";
 				} else if (resType == "css") {
 					c = new Code();
 					cast(c, Code).async = true;
@@ -268,15 +283,21 @@ class MainController extends XMLController {
 					code = StringTools.replace(code, "\r", "");
 					c.text = code;
 					c.percentWidth = c.percentHeight = 100;
+					icon = "icons/blue-document-css.png";
 				}
-				
+
 				if (c != null) {
 					var container:VBox = new VBox();
 					container.percentWidth = container.percentHeight = 100;
 					container.text = resName;
 					container.addChild(c);
 					tabs.addChild(container);
+					if (icon != null) {
+						tabs.getTabButton(tabIndex+1).icon = icon;
+					}
 				}
+				
+				tabIndex++;
 			}
 		}
 

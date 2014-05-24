@@ -3,7 +3,7 @@
 	<hbox>
 		<grid columns="2">
 			<text text="Title" />
-			<textinput id="title" text="Simple Title" width="150" />
+			<textinput id="title" text="Simple" width="150" />
 			
 			<text text="Text" />
 			<textinput id="text" text="Simple Popup Text" width="150" />

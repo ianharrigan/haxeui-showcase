@@ -39,6 +39,7 @@
 	<haxeflag name="-resource" value="assets/ui/main.xml@ui/main.xml" />
 	<haxeflag name="-resource" value="assets/ui/todo.xml@ui/todo.xml" />
 
+	<!--
 	<haxeflag name="-resource" value="assets/resources/AbsoluteLayout/AbsoluteLayout.xml@resources/AbsoluteLayout/AbsoluteLayout.xml" />
 	<haxeflag name="-resource" value="assets/resources/AbsoluteLayout/AbsoluteLayout.hx@resources/AbsoluteLayout/AbsoluteLayout.hx" />
 	<haxeflag name="-resource" value="assets/resources/BoxLayout/BoxLayout.xml@resources/BoxLayout/BoxLayout.xml" />
@@ -63,5 +64,6 @@
 	<haxeflag name="-resource" value="assets/resources/TextFields/TextFields.hx@resources/TextFields/TextFields.hx" />
 	<haxeflag name="-resource" value="assets/resources/TextInputs/TextInputs.xml@resources/TextInputs/TextInputs.xml" />
 	<haxeflag name="-resource" value="assets/resources/TextInputs/TextInputs.hx@resources/TextInputs/TextInputs.hx" />
+	-->
 	
 </project>

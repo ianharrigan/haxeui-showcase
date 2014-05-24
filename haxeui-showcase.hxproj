@@ -17,8 +17,8 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
-    <class path="C:\Servers\Haxe\haxe\lib\haxeui\1,3,2\styles" />
-    <class path="C:\Servers\Haxe\haxe\lib\haxeui\1,3,2\fonts" />
+    <class path="C:\Servers\Haxe\haxe\lib\haxeui\1,3,3\styles" />
+    <class path="C:\Servers\Haxe\haxe\lib\haxeui\1,3,3\fonts" />
     <class path="bin\flash\haxe" />
   </classpaths>
   <!-- Build options -->
@@ -28,7 +28,7 @@
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="True" />
-    <option additional="--no-output&#xA;-resource assets/data/views.xml@data/views.xml&#xA;-resource assets/ui/main.xml@ui/main.xml&#xA;-resource assets/ui/todo.xml@ui/todo.xml&#xA;-resource assets/resources/AbsoluteLayout/AbsoluteLayout.xml@resources/AbsoluteLayout/AbsoluteLayout.xml&#xA;-resource assets/resources/AbsoluteLayout/AbsoluteLayout.hx@resources/AbsoluteLayout/AbsoluteLayout.hx&#xA;-resource assets/resources/BoxLayout/BoxLayout.xml@resources/BoxLayout/BoxLayout.xml&#xA;-resource assets/resources/BoxLayout/BoxLayout.hx@resources/BoxLayout/BoxLayout.hx&#xA;-resource assets/resources/Buttons/Buttons.xml@resources/Buttons/Buttons.xml&#xA;-resource assets/resources/Buttons/Buttons.hx@resources/Buttons/Buttons.hx&#xA;-resource assets/resources/CheckBoxes/CheckBoxes.xml@resources/CheckBoxes/CheckBoxes.xml&#xA;-resource assets/resources/CheckBoxes/CheckBoxes.hx@resources/CheckBoxes/CheckBoxes.hx&#xA;-resource assets/resources/ContinuousLayout/ContinuousLayout.xml@resources/ContinuousLayout/ContinuousLayout.xml&#xA;-resource assets/resources/ContinuousLayout/ContinuousLayout.hx@resources/ContinuousLayout/ContinuousLayout.hx&#xA;-resource assets/resources/GridLayout/GridLayout.xml@resources/GridLayout/GridLayout.xml&#xA;-resource assets/resources/GridLayout/GridLayout.hx@resources/GridLayout/GridLayout.hx&#xA;-resource assets/resources/Images/Images.xml@resources/Images/Images.xml&#xA;-resource assets/resources/Images/Images.hx@resources/Images/Images.hx&#xA;-resource assets/resources/ListViews/ListViews.xml@resources/ListViews/ListViews.xml&#xA;-resource assets/resources/ListViews/ListViews.hx@resources/ListViews/ListViews.hx&#xA;-resource assets/resources/OptionBoxes/OptionBoxes.xml@resources/OptionBoxes/OptionBoxes.xml&#xA;-resource assets/resources/OptionBoxes/OptionBoxes.hx@resources/OptionBoxes/OptionBoxes.hx&#xA;-resource assets/resources/ScrollViews/ScrollViews.xml@resources/ScrollViews/ScrollViews.xml&#xA;-resource assets/resources/ScrollViews/ScrollViews.hx@resources/ScrollViews/ScrollViews.hx&#xA;-resource assets/resources/TextFields/TextFields.xml@resources/TextFields/TextFields.xml&#xA;-resource assets/resources/TextFields/TextFields.hx@resources/TextFields/TextFields.hx&#xA;-resource assets/resources/TextInputs/TextInputs.xml@resources/TextInputs/TextInputs.xml&#xA;-resource assets/resources/TextInputs/TextInputs.hx@resources/TextInputs/TextInputs.hx&#xA;-swf-version 11.2&#xA;#--remap nme:flash" />
+    <option additional="--no-output&#xA;-resource assets/data/views.xml@data/views.xml&#xA;-resource assets/ui/main.xml@ui/main.xml&#xA;-resource assets/ui/todo.xml@ui/todo.xml&#xA;-swf-version 11.2&#xA;#--remap nme:flash" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>

@@ -12,15 +12,23 @@ copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\ListViews.hx Z:\GitHub
 copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\ScrollViews.hx Z:\GitHub\haxeui-showcase\assets\resources\ScrollViews\
 copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\Accordions.hx Z:\GitHub\haxeui-showcase\assets\resources\Accordions\
 
-copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\ScrollBars.hx Z:\GitHub\haxeui-showcase\assets\resources\ScrollBars\
-copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\Sliders.hx Z:\GitHub\haxeui-showcase\assets\resources\Sliders\
-copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\ProgressBars.hx Z:\GitHub\haxeui-showcase\assets\resources\ProgressBars\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\HScrollBars.hx Z:\GitHub\haxeui-showcase\assets\resources\ScrollBars\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\VScrollBars.hx Z:\GitHub\haxeui-showcase\assets\resources\ScrollBars\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\HSliders.hx Z:\GitHub\haxeui-showcase\assets\resources\Sliders\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\VSliders.hx Z:\GitHub\haxeui-showcase\assets\resources\Sliders\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\HProgressBars.hx Z:\GitHub\haxeui-showcase\assets\resources\ProgressBars\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\VProgressBars.hx Z:\GitHub\haxeui-showcase\assets\resources\ProgressBars\
 
 copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\AbsoluteLayout.hx Z:\GitHub\haxeui-showcase\assets\resources\AbsoluteLayout\
 copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\BoxLayout.hx Z:\GitHub\haxeui-showcase\assets\resources\BoxLayout\
 copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\GridLayout.hx Z:\GitHub\haxeui-showcase\assets\resources\GridLayout\
-copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\ContinuousLayout.hx Z:\GitHub\haxeui-showcase\assets\resources\ContinuousLayout\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\HContinuousLayout.hx Z:\GitHub\haxeui-showcase\assets\resources\ContinuousLayout\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\VContinuousLayout.hx Z:\GitHub\haxeui-showcase\assets\resources\ContinuousLayout\
 copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\HorizontalLayout.hx Z:\GitHub\haxeui-showcase\assets\resources\HorizontalLayout\
 copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\VerticalLayout.hx Z:\GitHub\haxeui-showcase\assets\resources\VerticalLayout\
 
 copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\SimplePopup.hx Z:\GitHub\haxeui-showcase\assets\resources\SimplePopup\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\CustomPopup.hx Z:\GitHub\haxeui-showcase\assets\resources\CustomPopup\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\ListPopup.hx Z:\GitHub\haxeui-showcase\assets\resources\ListPopup\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\CalendarPopup.hx Z:\GitHub\haxeui-showcase\assets\resources\CalendarPopup\
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\BusyPopup.hx Z:\GitHub\haxeui-showcase\assets\resources\BusyPopup\

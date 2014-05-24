@@ -2,8 +2,8 @@ package haxe.ui.showcase.views;
 
 import haxe.ui.toolkit.core.XMLController;
 
-@:build(haxe.ui.toolkit.core.Macros.buildController("assets/resources/ScrollBars/ScrollBars.xml"))
-class ScrollBars extends XMLController {
+@:build(haxe.ui.toolkit.core.Macros.buildController("assets/resources/ProgressBars/HProgressBars.xml"))
+class HProgressBars extends XMLController {
 	public function new() {
 		theScroll.onReady = function(e) {
 			width.pos = theScroll.width;
@@ -19,6 +19,11 @@ class ScrollBars extends XMLController {
 			posLabel.text = "" + pos.pos;
 		};
 		
+		theScroll.onChange = function(e) {
+			pos.pos = theScroll.pos;
+			posLabel.text = "" + pos.pos;
+		};
+		
 		width.onChange = function(e) {
 			theScroll.width = width.pos;
 			widthLabel.text = "" + width.pos;
@@ -31,6 +36,7 @@ class ScrollBars extends XMLController {
 
 		min.onChange = function(e) {
 			theScroll.min = min.pos;
+			pos.min = min.pos;
 			minLabel.text = "" + min.pos;
 		};
 		
@@ -44,6 +50,9 @@ class ScrollBars extends XMLController {
 			theScroll.pos = pos.pos;
 			posLabel.text = "" + pos.pos;
 		};
+		
+		disabled.onChange = function(e) {
+			theScroll.disabled = disabled.selected;
+		}
 	}
-	
 }

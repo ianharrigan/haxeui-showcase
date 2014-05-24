@@ -25,7 +25,7 @@ class Main {
 		} else if (Prefs.theme == "windows") {
 			Toolkit.theme = new WindowsTheme();
 		}
-		Macros.addStyleSheet("assets/resources/main.css");
+
 		PopupManager.instance.defaultTitle = "Component Showcase";
 		Toolkit.defaultTransition = "none";
 		Toolkit.setTransitionForClass(Accordion, "slide");
