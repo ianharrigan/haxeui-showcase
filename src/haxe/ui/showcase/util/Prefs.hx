@@ -1,6 +1,6 @@
 package haxe.ui.showcase.util;
 
-import flash.net.SharedObject;
+import openfl.net.SharedObject;
 
 class Prefs {
 	private static inline var DEFAULT_SECTION:String = "HaxeUIComponentShowcase";

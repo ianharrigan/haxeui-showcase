@@ -1,6 +1,7 @@
 package haxe.ui.showcase;
 
 import flash.events.Event;
+import haxe.ui.richtext.Code;
 import haxe.ui.showcase.util.Prefs;
 import haxe.ui.showcase.util.XPathUtil;
 import haxe.ui.showcase.views.AbsoluteLayout;
@@ -40,7 +41,6 @@ import haxe.ui.toolkit.containers.ListView;
 import haxe.ui.toolkit.containers.TabView;
 import haxe.ui.toolkit.containers.VBox;
 import haxe.ui.toolkit.controls.Button;
-import haxe.ui.toolkit.controls.extended.Code;
 import haxe.ui.toolkit.controls.Menu;
 import haxe.ui.toolkit.controls.MenuButton;
 import haxe.ui.toolkit.controls.MenuItem;

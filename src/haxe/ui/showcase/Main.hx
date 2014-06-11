@@ -38,7 +38,7 @@ class Main {
 				selectionMethod: Prefs.selectionMethod,
 			}));
 		}
-		
+
 		Toolkit.init();
 		Toolkit.openFullscreen(function(root:Root) {
 			root.addChild(new MainController().view);
