@@ -34,6 +34,7 @@ import haxe.ui.showcase.views.VerticalLayout;
 import haxe.ui.showcase.views.VProgressBars;
 import haxe.ui.showcase.views.VScrollBars;
 import haxe.ui.showcase.views.VSliders;
+import haxe.ui.showcase.views.WebViews;
 import haxe.ui.toolkit.containers.Accordion;
 import haxe.ui.toolkit.containers.ContinuousHBox;
 import haxe.ui.toolkit.containers.Grid;
@@ -279,6 +280,13 @@ class MainController extends XMLController {
 					c = new Code();
 					cast(c, Code).async = true;
 					cast(c, Code).syntax = "css";
+					var code:String = ResourceManager.instance.getText(res);
+					code = StringTools.replace(code, "\r", "");
+					c.text = code;
+					c.percentWidth = c.percentHeight = 100;
+					icon = "icons/blue-document-css.png";
+				} else {
+					c = new Code();
 					var code:String = ResourceManager.instance.getText(res);
 					code = StringTools.replace(code, "\r", "");
 					c.text = code;

@@ -375,4 +375,21 @@
 			<resource type="xml">resources/BusyPopup/BusyPopup.xml</resource>
 		</resources>
 	</view>
+	
+	<!--
+	**************************************************************************************
+	* EXPERIMENTAL
+	**************************************************************************************
+	-->
+	<view>
+		<group>Experimental</group>
+		<name>Web View</name>
+		<icon>icons/ui-scroll-pane-image.png</icon>
+		<controller>haxe.ui.showcase.views.WebViews</controller>
+		<resources>
+			<resource type="haxe">resources/WebViews/WebViews.hx</resource>
+			<resource type="xml">resources/WebViews/WebViews.xml</resource>
+			<resource>resources/WebViews/example.html</resource>
+		</resources>
+	</view>
 </views>

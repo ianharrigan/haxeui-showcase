@@ -32,3 +32,9 @@ copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\CustomPopup.hx Z:\GitH
 copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\ListPopup.hx Z:\GitHub\haxeui-showcase\assets\resources\ListPopup\
 copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\CalendarPopup.hx Z:\GitHub\haxeui-showcase\assets\resources\CalendarPopup\
 copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\BusyPopup.hx Z:\GitHub\haxeui-showcase\assets\resources\BusyPopup\
+
+
+copy Z:\GitHub\haxeui-showcase\src\haxe\ui\showcase\views\WebViews.hx Z:\GitHub\haxeui-showcase\assets\resources\WebViews\
+rmdir Z:\GitHub\haxeui-showcase\bin\flash\bin\img
+mkdir Z:\GitHub\haxeui-showcase\bin\flash\bin\img
+copy Z:\GitHub\haxeui-showcase\assets\resources\WebViews\img\*.* Z:\GitHub\haxeui-showcase\bin\flash\bin\img

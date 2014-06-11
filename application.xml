@@ -18,6 +18,8 @@
 	<haxelib name="actuate" />
 	<haxelib name="haxeui" />
 	<haxelib name="haxeui-rich-text" />
+	<haxelib name="haxeui-webview" />
+	
 	
 	<!-- assets -->
 	<icon path="assets/application-default-icon.svg" />
