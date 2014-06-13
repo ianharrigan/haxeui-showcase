@@ -33,7 +33,6 @@
 	<assets path="assets/resources" rename="resources" unless="html5" />
 	<assets path="assets/icons" rename="icons" />
 	<assets path="assets/images" rename="images" />
-	<assets path="assets/fonts" rename="fonts"/>
 	
 	<!-- optimize output
 	<haxeflag name="-dce full" /> -->

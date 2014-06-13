@@ -18,22 +18,23 @@
   <classpaths>
     <class path="C:\Servers\Haxe\haxe\lib\openfl\2,0,0" />
     <class path="C:\Servers\Haxe\haxe\lib\actuate\1,7,5" />
-    <class path="C:\Servers\Haxe\haxe\lib\haxeui\1,4,2" />
+    <class path="C:\Servers\Haxe\haxe\lib\haxeui\1,4,5" />
     <class path="C:\Servers\Haxe\haxe\lib\svg\1,0,8" />
     <class path="C:\Servers\Haxe\haxe\lib\hscript\2,0,1" />
-    <class path="C:\Servers\Haxe\haxe\lib\haxeui-rich-text\0,1,0" />
-    <class path="C:\Servers\Haxe\haxe\lib\haxeui-webview\0,1,0" />
+    <class path="C:\Servers\Haxe\haxe\lib\haxeui-rich-text\0,1,1" />
+    <class path="C:\Servers\Haxe\haxe\lib\haxeui-webview\0,1,1" />
+    <class path="C:\Servers\Haxe\haxe\lib\cocktail\1,0,0-beta,5" />
     <class path="src" />
     <class path="C:\Servers\Haxe\haxe\lib\openfl\2,0,0\backends\flash" />
-    <class path="C:\Servers\Haxe\haxe\lib\haxeui\1,4,2\styles" />
-    <class path="C:\Servers\Haxe\haxe\lib\haxeui\1,4,2\fonts" />
-    <class path="C:\Servers\Haxe\haxe\lib\haxeui-rich-text\0,1,0\assets" />
-    <class path="C:\Servers\Haxe\haxe\lib\haxeui-webview\0,1,0\assets" />
+    <class path="C:\Servers\Haxe\haxe\lib\haxeui\1,4,5\styles" />
+    <class path="C:\Servers\Haxe\haxe\lib\haxeui\1,4,5\fonts" />
+    <class path="C:\Servers\Haxe\haxe\lib\haxeui-rich-text\0,1,1\assets" />
+    <class path="C:\Servers\Haxe\haxe\lib\haxeui-webview\0,1,1\assets" />
     <class path="bin\flash\haxe" />
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="haxeui-rich-text=0.1.0&#xA;haxeui-webview=0.1.0&#xA;actuate=1.7.5&#xA;openfl=2.0.0&#xA;hscript=2.0.1&#xA;haxeui=1.4.2&#xA;svg=1.0.8&#xA;tools=1.5.6&#xA;openfl-flash&#xA;display&#xA;web" />
+    <option directives="haxeui-rich-text=0.1.1&#xA;haxeui-webview=0.1.1&#xA;actuate=1.7.5&#xA;openfl=2.0.0&#xA;cocktail=1.0.0-beta.5&#xA;hscript=2.0.1&#xA;haxeui=1.4.5&#xA;svg=1.0.8&#xA;tools=1.5.6&#xA;openfl-flash&#xA;display&#xA;web" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
